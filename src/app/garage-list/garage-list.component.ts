@@ -8,13 +8,25 @@ import { DataService } from '../core/data.service';
 })
 export class GarageListComponent implements OnInit {
 
-  garages: any;
+  public garages: Feature[];
+  garageState: number;
 
-  constructor(private data: DataService) {
+  constructor(private dataService: DataService) {
    }
 
   ngOnInit() {
-    this.garages = this.data.get_data();
+
+    this.dataService.get().subscribe(response => {
+      this.garages = response.features;
+    });
+    this.getData();
+    console.log(this.garageState);
+  }
+
+  public getData() {
+    this.garages.forEach(garage => {
+      return this.garageState = garage.properties.layers['parking.garage'].data.FreeSpaceShort;
+    });
   }
 
 }

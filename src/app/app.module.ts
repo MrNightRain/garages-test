@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GarageListComponent } from './garage-list/garage-list.component';
 import { DataService } from './core/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
    declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
-      HttpClientModule
+      HttpClientModule,
+      MatListModule,
    ],
    providers: [
       DataService

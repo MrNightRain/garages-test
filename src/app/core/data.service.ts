@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +13,10 @@ export class DataService {
 
   }
 
-  get_data(): Observable<RootObject[]> {
-    return this.httpClient.get(this.DATA_URL).pipe(map(data => {
-      const garagesList = data['features'];
-      // console.log(garagesList);
-      return garagesList;
-    }));
+  public get(): Observable<RootObject> {
+    return this.httpClient.get<RootObject>(this.DATA_URL);
   }
+
+
 
 }

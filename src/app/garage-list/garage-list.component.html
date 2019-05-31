@@ -1,4 +1,13 @@
-<div *ngFor="let g of garages | async">
-
-    {{g | json}}
+<div class="body">
+  <mat-nav-list>
+    <a mat-list-item *ngFor="let g of garages">
+      <h3>{{g.properties.title}}</h3>
+      <i class="material-icons">
+        fiber_manual_record
+      </i>
+    </a>
+  </mat-nav-list>
 </div>
+<!-- <div class='  ' *ngFor="let g of garages">
+  <div>{{g.properties.title}}</div>
+</div> -->

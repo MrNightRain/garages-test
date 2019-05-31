@@ -1,5 +1,4 @@
 interface RootObject {
-    '@context': Context;
     type: string;
     features: Feature[];
   }
@@ -54,39 +53,3 @@ interface Context2 {
     '@vocab': string;
   }
 
-interface Context {
-    '@base': string;
-    '@vocab': string;
-    cdk: string;
-    dc: string;
-    rdf: string;
-    rdfs: string;
-    owl: string;
-    xsd: string;
-    org: string;
-    foaf: string;
-    dcat: string;
-    geos: string;
-    dbpedia: string;
-    'dbpedia-owl': string;
-    title: string;
-    cdk_id: string;
-    features: string;
-    properties: string;
-    date_created: string;
-    layer: Layer;
-    layers: Layers;
-    data: string;
-    geometry?: any;
-    type?: any;
-  }
-
-interface Layers {
-    '@id': string;
-    '@container': string;
-  }
-
-interface Layer {
-    '@id': string;
-    '@type': string;
-  }
