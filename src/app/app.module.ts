@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GarageListComponent } from './garage-list/garage-list.component';
 import { DataService } from './core/data.service';
-import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
 
 @NgModule({
@@ -16,7 +15,7 @@ import {MatListModule} from '@angular/material/list';
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
-      HttpClientModule,
+      ,
       MatListModule,
    ],
    providers: [
