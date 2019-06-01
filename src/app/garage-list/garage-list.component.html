@@ -1,13 +1,19 @@
 <div class="body">
-  <mat-nav-list>
-    <a mat-list-item *ngFor="let g of garages">
-      <h3>{{g.properties.title}}</h3>
-      <i class="material-icons">
+  <mat-nav-list class="garageList">
+    <a mat-list-item *ngFor="let d of getData()">
+      <h3>{{d.title}}</h3>
+      <i class="material-icons" [style.color]="">
         fiber_manual_record
       </i>
     </a>
   </mat-nav-list>
+  <!-- <aol-map>
+      <aol-view>
+          <aol-coordinate [x]="4.90437" [y]="52.36921"></aol-coordinate>
+      </aol-view>
+      <aol-layer-tile>
+          <aol-source-osm></aol-source-osm>
+      </aol-layer-tile>
+  </aol-map> -->
 </div>
-<!-- <div class='  ' *ngFor="let g of garages">
-  <div>{{g.properties.title}}</div>
-</div> -->
+
