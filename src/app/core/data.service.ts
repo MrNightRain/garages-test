@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
 
-  readonly DATA_URL = 'http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=100';
+  readonly DATA_URL = 'http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=20';
 
   constructor(private httpClient: HttpClient) {
 

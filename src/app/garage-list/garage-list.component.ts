@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/data.service';
-import { Observable } from 'openlayers';
 
 @Component({
   selector: 'app-garage-list',

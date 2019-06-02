@@ -1,10 +1,12 @@
 <div class="body">
   <mat-nav-list class="garageList">
-    <a mat-list-item *ngFor="let d of getData()">
-      <h3>{{d.title}}</h3>
-      <i class="material-icons" [style.color]="">
-        fiber_manual_record
-      </i>
+    <a mat-list-item class="data_container" *ngFor="let d of getData()">
+      <ng-container *ngIf="d.FreeSpaceShort != 0">
+          <h3>{{d.title}}</h3>
+          <i class="material-icons" [style.color]="">
+            fiber_manual_record
+          </i>
+      </ng-container>
     </a>
   </mat-nav-list>
   <!-- <aol-map>

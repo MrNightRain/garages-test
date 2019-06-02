@@ -7,19 +7,23 @@ import { GarageListComponent } from './garage-list/garage-list.component';
 import { DataService } from './core/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
-import { AngularOpenlayersModule } from 'ngx-openlayers';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
    declarations: [
       AppComponent,
-      GarageListComponent
+      GarageListComponent,
+      MapComponent
    ],
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
       HttpClientModule,
       MatListModule,
-      AngularOpenlayersModule,
+      AgmCoreModule.forRoot({
+         // apiKey: 'AIzaSyCR6VIiiqjqIZsu7cCtn26OLj82Oev6OAA'
+       })
    ],
    providers: [
       DataService
