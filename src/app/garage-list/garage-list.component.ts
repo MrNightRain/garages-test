@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/data.service';
+import { Position } from '../clases/position';
 
 @Component({
   selector: 'app-garage-list',
@@ -8,7 +9,7 @@ import { DataService } from '../core/data.service';
 })
 export class GarageListComponent implements OnInit {
 
-  public features: Feature[] = [];
+  public features: any;
 
   constructor(private dataService: DataService) {
   }
@@ -16,28 +17,16 @@ export class GarageListComponent implements OnInit {
   ngOnInit() {
 
     this.dataService.get().subscribe(response => {
-      this.features = response.features;
+      this.features = response;
     });
-
+  }
+  newPosition(lat, lng) {
+    const pos = new Position();
+    pos.lat = lat;
+    pos.lng = lng;
+    pos.zoom = 18;
+    this.dataService.mapCenter(pos);
   }
 
-  public getData(): SharedData[] {
-    const dataArr: Array<SharedData> = [];
-    this.features.forEach(garage => {
-      const a = new SharedData();
-      a.FreeSpaceShort = garage.properties.layers['parking.garage'].data.FreeSpaceShort;
-      a.ShortCapacity = garage.properties.layers['parking.garage'].data.ShortCapacity;
-      a.title = garage.properties.title;
-      a.geometry = garage.geometry;
-      dataArr.push(a);
-    });
-    return dataArr;
-  }
 
-}
-class SharedData {
-  title: string;
-  FreeSpaceShort: number;
-  ShortCapacity: number;
-  geometry: Geometry;
 }

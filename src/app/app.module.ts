@@ -22,7 +22,7 @@ import { AgmCoreModule } from '@agm/core';
       HttpClientModule,
       MatListModule,
       AgmCoreModule.forRoot({
-         // apiKey: 'AIzaSyCR6VIiiqjqIZsu7cCtn26OLj82Oev6OAA'
+         apiKey: 'AIzaSyCR6VIiiqjqIZsu7cCtn26OLj82Oev6OAA'
        })
    ],
    providers: [

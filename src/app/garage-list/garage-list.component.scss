@@ -1,13 +1,23 @@
 .garageList {
-    width: 25vw;
-    height: auto;
+    width: 100%;
     -webkit-box-shadow: 1px 0px 4px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 0px 4px -1px rgba(0,0,0,0.75);
     box-shadow: 1px 0px 4px -1px rgba(0,0,0,0.75);
 }
+.listItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 i {
     color: #4CAF50;
-    margin: 10px;
-    position: absolute;
-    right: 0px;
+
+}
+
+.noSpace {
+    color: #F44336;
+}
+.garageTitle {
+    text-transform: uppercase;
 }
